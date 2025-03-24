@@ -1,7 +1,14 @@
 .depoimentos {
-  padding: 80px 10%;
+  padding: 300px 10% 100px 10%;
   text-align: center;
-  background: linear-gradient(135deg, #2b0b49, #000);
+  position: relative;
+  background: radial-gradient(
+      circle at center 600px,
+      rgba(60, 19, 97, 0.6),
+      rgba(0, 0, 0, 0) 50%
+    ),
+    linear-gradient(to bottom, #1d1616 200%, #2b0b49 10%);
+  overflow: hidden;
 }
 
 .depoimentos h2 {
@@ -21,30 +28,116 @@
   gap: 20px;
   flex-wrap: wrap;
   margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
 }
 
-.depoimentos-videos img {
-  width: 200px;
-  border-radius: 10px;
-  cursor: pointer;
+.video-card {
+  position: relative;
+  width: 307px;
+  height: 509px;
+  padding: 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
-.depoimentos-videos img:hover {
+.video-card img {
+  width: 247px;
+  height: 439px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.video-card:hover {
   transform: scale(1.05);
 }
 
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 22px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: transform 0.2s, opacity 0.2s;
+  cursor: pointer;
+}
+
+.play-icon:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.8;
+}
+
 .porque-escolher {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: -150px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 60px;
   flex-wrap: wrap;
+  padding: 170px 10% 100px 10%;
+  overflow: hidden;
+  background-color: #1d1616;
+  background-image: url("../../assets/img/bg-2-1.png");
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.imagem-container {
+  position: relative;
+  border: 1px solid #50fa7b;
+  border-radius: 12px;
+  padding: 8px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  max-width: 571px;
+}
+
+.imagem-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.imagem-overlay {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(70, 70, 228, 0.25);
+  border-radius: 8px;
+  transition: opacity 0.3s;
+}
+
+.imagem-container:hover .imagem-overlay {
+  opacity: 0;
 }
 
 .porque-text {
-  max-width: 500px;
+  max-width: 500px; /* alinhando com o tamanho da borda da imagem */
   text-align: left;
+  color: #fff;
 }
 
 .porque-text h3 {
@@ -61,6 +154,20 @@
 .porque-text ul {
   list-style: none;
   margin-bottom: 30px;
+  padding: 20px 60px 20px 20px;
+  border: 1px solid #50fa7b;
+  border-radius: 10px;
+  position: relative;
+}
+
+.porque-text ul::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 15px;
+  width: 1px;
+  background-color: #50fa7b;
 }
 
 .porque-text ul li {
@@ -68,7 +175,44 @@
   font-weight: 500;
 }
 
-.porque-img img {
-  max-width: 400px;
-  border-radius: 10px;
+.porque-text ul li::before {
+  margin-right: 8px;
+  color: #50fa7b;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .depoimentos-videos {
+    justify-content: center;
+  }
+
+  .video-card {
+    width: 307px;
+    height: 509px;
+  }
+
+  .video-card img {
+    width: 247px;
+    height: 439px;
+  }
+
+  .porque-escolher {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 5% 80px 5%;
+  }
+
+  .porque-img img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+
+  .porque-text {
+    text-align: center;
+    max-width: 300px;
+  }
 }

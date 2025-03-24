@@ -7,10 +7,10 @@ async function loadComponent(id, file) {
 
 const nomesMarquee = [
   { nome: "LogMoney 💰" },
-  //   { nome: "Sucesso 🚀" },
-  //   { nome: "Afiliados ⭐" },
-  //   { nome: "Ganhos Rápidos 💸" },
-  //   { nome: "Confiança 🔒" },
+  // { nome: "Sucesso 🚀" },
+  // { nome: "Afiliados ⭐" },
+  // { nome: "Ganhos Rápidos 💸" },
+  // { nome: "Confiança 🔒" },
 ];
 
 function gerarConteudoMarquee(dados) {
@@ -19,10 +19,17 @@ function gerarConteudoMarquee(dados) {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("header", "components/header.html");
-  loadComponent("hero", "components/hero.html");
+
+  loadComponent("hero", "components/hero.html").then(() => {
+    if (typeof setupVideoPlayer === "function") {
+      setupVideoPlayer();
+    }
+  });
+
   loadComponent("buttons", "components/buttons.html");
   loadComponent("depoimentos", "components/depoimentos.html");
   loadComponent("afiliados-migrando", "components/afiliados-migrando.html");
+
   loadComponent("animated-strips", "components/animated-strips.html").then(
     () => {
       const conteudo = gerarConteudoMarquee(nomesMarquee).repeat(20);

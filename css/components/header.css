@@ -1,24 +1,47 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background: transparent;
+  gap: 20px;
 }
 
 .header .logo {
-    width: 310px;
+  max-width: 310px;
+  width: 100%;
+  height: auto;
+  flex-shrink: 1;
 }
 
 .btn-aluno {
-    background-color: var(--highlight-green);
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
+  background-color: var(--highlight-green);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+  flex-shrink: 0;
 }
 
 .btn-aluno:hover {
-    opacity: 0.85;
+  opacity: 0.85;
+}
+
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .header .logo {
+    max-width: 250px;
+  }
+
+  .btn-aluno {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
 }

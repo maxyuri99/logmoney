@@ -4,11 +4,10 @@
   justify-content: space-between;
   padding: 60px 10%;
   gap: 40px;
-  flex-wrap: wrap;
 }
 
 .hero-text {
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .hero-text h1 {
@@ -30,7 +29,7 @@
 
 .btn-primary,
 .btn-secondary {
-  padding: 14px 30px;
+  padding: 20px 60px;
   border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
@@ -58,22 +57,78 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.hero-video img {
-  max-width: 689px;
+.hero-video {
+  position: relative;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: auto;
-  max-height: 387px;
-  border-radius: 10px;
-  object-fit: cover;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
+.video-placeholder {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  max-width: 689px;
+}
+
+.video-placeholder img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-placeholder:hover img {
+  transform: scale(1.03);
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 22px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, opacity 0.2s;
+  pointer-events: none;
+}
+
+.video-placeholder:hover .play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.9;
+}
+
+.hero-video iframe {
+  width: 100%;
+  max-width: 689px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 10px;
+  background: #000;
+  display: block;
+}
+
+@media (max-width: 780px) {
   .hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
     padding: 40px 5%;
+  }
+
+  .hero-text {
+    max-width: 100%;
   }
 
   .hero-text h1 {
@@ -84,10 +139,16 @@
     font-size: 1rem;
   }
 
+  .hero-video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .hero-video img {
     width: 100%;
-    max-width: 350px;
-    height: auto;
+    min-width: 200px;
+    max-width: 450px;
   }
 
   .btn-primary,

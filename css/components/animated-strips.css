@@ -1,30 +1,46 @@
-.animated-strips {
+html,
+body {
+  overflow-x: hidden;
+}
+
+.animated-strips-container {
   position: relative;
   width: 100%;
-  height: 5px;
-  z-index: 9999;
+  height: 0;
+  z-index: 2;
+}
+
+.animated-strips {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0;
+  overflow: visible;
   pointer-events: none;
 }
 
 .strip {
   position: absolute;
-  width: 160vw;
-  height: 130px;
+  width: 140vw;
+  height: 140px;
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
+  pointer-events: none;
+  clip-path: inset(0 0 0 0);
+  contain: paint;
 }
 
 .strip-purple {
   background-color: #1e1621;
-  top: 50%;
+  top: 0;
   transform: translateX(-50%) rotate(6deg);
   z-index: 1000;
 }
 
 .strip-green {
   background-color: var(--highlight-green);
-  top: 50%;
+  top: 10px;
   transform: translateX(-50%) rotate(-6deg);
   z-index: 1001;
 }
@@ -32,22 +48,12 @@
 .marquee-layer {
   position: absolute;
   width: 160vw;
+  max-width: 100%;
   height: 100px;
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
-}
-
-.purple-text {
-  top: 50%;
-  transform: translateX(-50%) rotate(6deg);
-  z-index: 1002;
-}
-
-.green-text {
-  top: 50%;
-  transform: translateX(-50%) rotate(-6deg);
-  z-index: 1003;
+  clip-path: inset(0 0 0 0);
 }
 
 .marquee {
@@ -94,16 +100,24 @@
 
 @media (max-width: 768px) {
   .strip-purple {
-    display: none; /* Some a faixa roxa no mobile */
+    display: none;
   }
 
   .strip-green {
-    transform: translateX(-50%) rotate(0deg); /* Fica reta */
-    height: 100px; /* Um pouco mais fina no mobile */
+    width: 120vw;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    clip-path: inset(0 0 0 0);
   }
 
   .marquee {
-    font-size: 2rem; /* Texto um pouco menor no mobile */
+    font-size: 2rem;
     line-height: 100px;
+  }
+
+  .marquee-layer {
+    width: 120vw;
   }
 }
