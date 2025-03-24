@@ -1,0 +1,51 @@
+.afiliados-migrando {
+  padding: 80px 10%;
+  text-align: center;
+  background: radial-gradient(circle at center, #2b0b49, #000);
+}
+
+.afiliados-migrando h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.afiliados-migrando p {
+  color: #ccc;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.migrando-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.migrando-cards .card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  width: 230px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.migrando-cards .card h4 {
+  color: var(--highlight-green);
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.migrando-cards .card p {
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.migrando-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}

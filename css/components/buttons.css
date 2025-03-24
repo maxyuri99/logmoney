@@ -1,0 +1,10 @@
+.strip-banner {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--highlight-green);
+}
+
+.strip-banner img {
+    width: 100%;
+    display: block;
+}
