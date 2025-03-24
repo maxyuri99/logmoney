@@ -1,11 +1,24 @@
 .afiliados-migrando {
-  padding: 80px 10%;
+  padding: 140px 10%;
   text-align: center;
-  background: radial-gradient(circle at center, #2b0b49, #000);
+  background: radial-gradient(
+      circle at center 400px,
+      rgba(60, 19, 97, 0.6),
+      rgba(0, 0, 0, 0) 40%
+    ),
+    linear-gradient(to bottom, #1d1616 200%, #2b0b49 20%);
+}
+
+.afiliados-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .afiliados-migrando h2 {
-  font-size: 2.5rem;
+  font-size: 3.3em;
   margin-bottom: 20px;
 }
 
@@ -21,31 +34,54 @@
 .migrando-cards {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: stretch;
   flex-wrap: wrap;
+  gap: 13px;
+  width: 100%;
 }
 
 .migrando-cards .card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 30px;
   border-radius: 12px;
-  width: 230px;
+  width: 100%;
+  max-width: 308px;
+  height: auto;
+  max-height: 298px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.migrando-cards .card i {
+  font-size: 60px;
+  color: #ccc;
+  margin-bottom: 60px;
 }
 
 .migrando-cards .card h4 {
   color: var(--highlight-green);
   margin-bottom: 12px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .migrando-cards .card p {
   color: #ccc;
   line-height: 1.5;
+  font-size: 0.95rem;
+  flex: 1;
 }
 
 .migrando-cards .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .migrando-cards {
+    gap: 20px;
+  }
 }
