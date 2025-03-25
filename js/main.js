@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }),
     loadComponent("depoimentos", "components/depoimentos.html"),
     loadComponent("afiliados-migrando", "components/afiliados-migrando.html"),
+    loadComponent("planos", "components/planos.html"),
+    loadComponent("faq", "components/faq.html").then(() => {
+      if (typeof setupFaqAccordion === "function") {
+        setupFaqAccordion();
+      }
+    }),
     loadComponent("stacked-cards", "components/stacked-cards.html").then(() => {
       if (typeof setupStackedCards === "function") {
         setupStackedCards();

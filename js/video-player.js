@@ -29,7 +29,6 @@ function setupVideoPlayer() {
           videoContainer.innerHTML = "";
           videoContainer.appendChild(iframe);
 
-          // Força um reflow para que o opacity transition funcione
           requestAnimationFrame(() => {
             iframe.style.opacity = "1";
           });
