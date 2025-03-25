@@ -8,6 +8,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: #fff;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 a {
   text-decoration: none;
