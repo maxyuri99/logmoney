@@ -1,30 +1,36 @@
-# 💰 LogMoney
+# 💻 LogMoney
 
-**LogMoney** é uma aplicação web desenvolvida com foco em controle financeiro pessoal, permitindo o usuário visualizar, organizar e acompanhar seus gastos e receitas de forma prática e intuitiva.
-
----
-
-## ✨ Funcionalidades Principais
-
-- Cadastro de entradas e saídas financeiras
-- Visualização de saldo atual
-- Relatório visual simples de ganhos e gastos
-- Layout responsivo e moderno
-- Uso de ícones FontAwesome para uma interface mais amigável
+Este projeto foi criado com o objetivo de treinar e praticar HTML, CSS e JavaScript, utilizando organização modular, componentização e boas práticas de estrutura de código.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🛠 Estrutura e Organização
 
-- **HTML5**
-- **CSS3** (com um arquivo principal `main.css` customizado)
-- **JavaScript** (arquivo principal `main.js` com toda a lógica do front-end)
-- **FontAwesome** para ícones
-- Estrutura 100% client-side (não há backend envolvido)
+- O projeto foi montado com uma estrutura separando componentes HTML, CSS e arquivos JavaScript, aplicando o conceito de **componentização**.
+- Cada seção visível da página (como hero, header, planos, depoimentos, FAQ e cartões empilhados) possui seu próprio arquivo HTML e um CSS correspondente dentro da pasta `components`.
+- O CSS utiliza variáveis globais (no arquivo `variables.css`) para facilitar manutenções e mudanças de tema.
+- O reset CSS é aplicado para garantir consistência entre diferentes navegadores.
+- JavaScript modularizado, separando funcionalidades como:
+  - Animações de rolagem (`scroll-animations.js`)
+  - Interatividade do FAQ (`faq.js`)
+  - Controle do cabeçalho (`header.js`)
+  - Comportamento de cartões empilhados (`stacked-cards.js`)
+  - Player de vídeo (`video-player.js`)
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🎨 Técnicas utilizadas
+
+- **Design Patterns** aplicados:
+  - **Separation of Concerns (Separação de responsabilidades)**: HTML para marcação, CSS para estilos e JS para comportamento, todos organizados em pastas próprias.
+  - **Composição de componentes**: Componentes HTML reutilizáveis incluídos na página principal.
+  - **Organização em módulos JS**: Cada funcionalidade importante é isolada em um arquivo JS próprio, facilitando manutenção.
+  - **Uso de variáveis CSS** para controle centralizado de cores e tamanhos.
+  - **Animações CSS** e JavaScript aplicadas de forma desacoplada, respeitando o princípio da responsabilidade única.
+
+---
+
+## 📁 Estrutura de Pastas
 
 ```
 logmoney/
@@ -59,82 +65,57 @@ logmoney/
 │   ├── scroll-animations.js
 │   ├── stacked-cards.js
 │   └── video-player.js
-├── node_modules/
-├── .gitignore
 ├── index.html
-├── package-lock.json
 ├── package.json
+├── package-lock.json
 └── README.md
-
 ```
-
-- **index.html** — Página principal com estrutura do app
-- **main.css** — Arquivo de estilos central
-- **main.js** — Lógica de controle financeiro e manipulação DOM
-- **node_modules/** — Dependências do projeto, contendo os ícones do FontAwesome
 
 ---
 
-## 🛠 Como executar o projeto localmente
+## ▶️ Como rodar o projeto localmente
 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/maxyuri99/logmoney.git
+git clone https://github.com/seu-usuario/logmoney.git
 ```
 
-2. Acesse o diretório do projeto:
+2. Acesse o diretório:
 
 ```bash
 cd logmoney
 ```
 
-3. Instale as dependências:
+3. Instale as dependências (apenas live-server):
 
 ```bash
 npm install
 ```
 
-4. Inicie o servidor local:
+4. Inicie o projeto localmente:
 
 ```bash
 npm run dev
 ```
 
-5. O projeto será aberto automaticamente no navegador!
-
-> Obs.: Esse projeto utiliza o **live-server** para rodar localmente de forma prática.
+> Isso abrirá automaticamente o projeto no navegador.
 
 ---
 
-## 🌍 Deploy na Vercel
+## 🌐 Deploy gratuito
 
-O projeto está com deploy na [Vercel](https://vercel.com):
-
-```
-https://logmoney.vercel.app
-```
+Este projeto está hospedado gratuitamente na Vercel: [https://logmoney.vercel.app](https://logmoney.vercel.app)  
+A cada push no repositório do GitHub, o deploy é atualizado automaticamente.
 
 ---
 
-## 🔎 Estrutura da interface
+## ✅ Objetivo do projeto
 
-- **Cabeçalho**: Nome da aplicação
-- **Seção de saldo**: Exibe saldo atual
-- **Tabela de transações**: Lista das entradas e saídas cadastradas
-- **Botões de ação**: Para adicionar ou excluir registros
+Este projeto foi feito **apenas para estudo e prática** de:
 
----
-
-## 💡 Possíveis melhorias futuras
-
-- Adição de gráficos interativos
-- Persistência de dados via LocalStorage
-- Suporte a múltiplas moedas
-- Exportação de relatórios em PDF
-
----
-
-## 📜 Licença
-
-Este projeto está licenciado sob a licença **ISC**.
+- Estruturação modular de projetos web;
+- Separação de componentes HTML e CSS;
+- Animações com CSS e JS;
+- Organização de código JavaScript em múltiplos arquivos;
+- Utilização de design patterns simples para organizar um projeto estático.
