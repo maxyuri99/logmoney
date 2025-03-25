@@ -1,15 +1,18 @@
 {
   "name": "logmoney",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicação web para controle financeiro pessoal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Max Yuri",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 }
